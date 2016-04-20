@@ -12,7 +12,6 @@
 
 #include <stdlib.h>
 #include <check.h>
-
 #include "geometry.h"
 
 /* coord_2d_eq Test */
@@ -95,12 +94,12 @@ START_TEST(test_2d_area_triangle){
     coord_2d_t a;
     coord_2d_t b;
     coord_2d_t c;
-    double exp = 0.5;
+    double exp = 0.0;
 
     a.x = b.x = 0;
     a.y = c.y = 0;
-    b.y = c.x = 1;
-    area = coord_2d_area_triangle(a, b, c);
+    b.y = c.x = 0;
+    double area = coord_2d_area_triangle(&a, &b, &c);
     ck_assert(area == exp);
 }
 END_TEST
